@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView lista=findViewById(R.id.lista);
 
         View.OnClickListener onClickListener = new View.OnClickListener(){
+            
             @Override
             public void onClick(View v){
                 ArrayList<Integer> a=new ArrayList<>();
