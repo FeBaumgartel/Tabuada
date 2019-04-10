@@ -29,13 +29,19 @@ public class MainActivity extends AppCompatActivity {
             
             @Override
             public void onClick(View v){
-                ArrayList<Integer> a=new ArrayList<>();
-                for(int i=1;i<=10;i++){
-                    a.add(i*Integer.valueOf(number.getText().toString()));
+                try {
+                    ArrayList<Integer> a = new ArrayList<>();
+                    for (int i = 1; i <= 10; i++) {
+                        a.add(i * Integer.valueOf(number.getText().toString()));
+                    }
+                    ArrayAdapter<Integer> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.layout1, a);
+                    lista.setAdapter(adapter);
+                }catch (Exception e) {
+                    ArrayList<String> a=new ArrayList<>();
+                    a.add("Ocorreu algum erro");
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.layout1, a);
+                    lista.setAdapter(adapter);
                 }
-                ArrayAdapter<Integer> adapter = new ArrayAdapter<>(MainActivity.this, R.layout.layout1, a);
-
-                lista.setAdapter(adapter);
             }
         };
 
